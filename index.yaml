@@ -44,4 +44,15 @@ entries:
     urls:
     - https://github.com/jagyugyaerik/charts/releases/download/nginx-3-0.1.0/nginx-3-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-08T01:52:35.255856986Z"
+  nginx-4:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-08T01:57:51.708525386Z"
+    description: A Helm chart for Kubernetes
+    digest: af8348bf11b3c2b6024d34593dd32c90c429b810b43d6089509b83a49bb25b0c
+    name: nginx-4
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-4-0.1.0/nginx-4-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-08T01:57:51.708531508Z"
