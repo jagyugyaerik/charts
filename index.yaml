@@ -33,4 +33,15 @@ entries:
     urls:
     - https://github.com/jagyugyaerik/charts/releases/download/nginx-2-0.1.0/nginx-2-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-08T01:41:59.354669727Z"
+  nginx-3:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-08T01:52:35.255852481Z"
+    description: A Helm chart for Kubernetes
+    digest: 1695726f246d898dad13dc3f85f19341354873738b637f027a70a8f05fc56fd0
+    name: nginx-3
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-3-0.1.0/nginx-3-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-08T01:52:35.255856986Z"
