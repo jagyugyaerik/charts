@@ -11,4 +11,26 @@ entries:
     urls:
     - https://github.com/jagyugyaerik/charts/releases/download/nginx-0.1.0/nginx-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-08T01:32:18.384982683Z"
+  nginx-1:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-08T01:41:59.168832086Z"
+    description: A Helm chart for Kubernetes
+    digest: 268539e94d4594a2407e1ec7f75de6ef2efdcab749763a8d9f8dfa09ad54a4cb
+    name: nginx-1
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-1-0.1.0/nginx-1-0.1.0.tgz
+    version: 0.1.0
+  nginx-2:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-08T01:41:59.354664478Z"
+    description: A Helm chart for Kubernetes
+    digest: d2d6fbce2c7778fd66e9ba6594a02608d3462946516f4412a221cee8b491eedf
+    name: nginx-2
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-2-0.1.0/nginx-2-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-08T01:41:59.354669727Z"
