@@ -61,9 +61,7 @@ https://<orgname>.github.io/helm-charts
 
 ### Configure Github Pages
 
-<<<<<<< Updated upstream
 ### Create Github Token with right permission
-=======
 > Note: You can publish GitHub Pages from a private repository **only if your account/organization is on a paid plan** (GitHub Pro, Team, or Enterprise). On the Free plan, Pages must use a public repository.
 > The published site itself is always publicly accessible.
 
@@ -97,7 +95,27 @@ git push origin gh-pages
 GitHub will build and publish your site. After a short time you’ll see:
 
 - A **URL** like `https://<user-or-org>.github.io/<repo-name>/` in the same **Pages** settings section showing the published site address.
->>>>>>> Stashed changes
+
+## 3. (Optional) Set visibility of the Pages site
+
+Even though the repository is private, the Pages site is public. On paid plans you can explicitly confirm visibility:
+
+1. Still under **Settings → Pages**, locate the **GitHub Pages visibility** dropdown.[web:550]
+2. Choose the desired visibility (for most cases: **Public**).
+
+## 4. Update the site
+
+To update the published site:
+
+1. Edit your files locally.
+2. Commit and push to the configured branch/folder.
+3. GitHub automatically rebuilds and redeploys the Pages site whenever you push changes to that branch.[web:557][web:559]
+
+If you later switch the repo to **public** or **free private**, remember that:
+
+- On Free plans, making the repo private can cause the existing GitHub Pages site to be unpublished.[web:556][web:553]
+
+### Create Github Token with right permission
 
 ### Github Action Workflow
 
@@ -136,3 +154,7 @@ jobs:
 The above configuration uses @helm/chart-releaser-action to turn your GitHub project into a self-hosted Helm chart repo. Checking each chart in your project, and whenever there's a new chart version, creates a corresponding GitHub release named for the chart version, adds Helm chart artifacts to the release, and creates or updates an `index.yaml` file with metadata about those releases, which is then hosted on GitHub pages.
 
 Note: The Chart Releaser Action is almost always used in tandem with the Helm `Testing Action` and `Kind Action`.
+
+### Why an orphan gh-pages branch?
+
+An orphan branch has no history connection to your main branch, so the `gh-pages` branch contains only the `index.yaml` site and not your source code history. This keeps the repository smaller and the Pages history clean.​
