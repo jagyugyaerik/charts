@@ -61,7 +61,43 @@ https://<orgname>.github.io/helm-charts
 
 ### Configure Github Pages
 
+<<<<<<< Updated upstream
 ### Create Github Token with right permission
+=======
+> Note: You can publish GitHub Pages from a private repository **only if your account/organization is on a paid plan** (GitHub Pro, Team, or Enterprise). On the Free plan, Pages must use a public repository.
+> The published site itself is always publicly accessible.
+
+#### Create an orphan branch
+
+```bash
+git switch main
+
+git switch --orphan gh-pages
+
+git rm -rf .
+
+git add .
+git commit -s -m "Initial GitHub Pages commit"
+
+git push origin gh-pages
+```
+
+#### Configure GitHub Pages
+
+1. Go to your repository on GitHub.
+2. Click **Settings** (top menu of the repository).
+3. In the left sidebar, click **Pages**.
+4. Under **Source** (or **Build and deployment**):
+   - Select **Deploy from a branch**.
+   - Choose the **Branch** (e.g. `gh-pages`).
+   - Choose the **Folder**:
+     - `/ (root)` if your site is at the repository root, or  
+5. Click **Save**.
+
+GitHub will build and publish your site. After a short time you’ll see:
+
+- A **URL** like `https://<user-or-org>.github.io/<repo-name>/` in the same **Pages** settings section showing the published site address.
+>>>>>>> Stashed changes
 
 ### Github Action Workflow
 
