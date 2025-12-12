@@ -66,4 +66,18 @@ entries:
     urls:
     - https://github.com/jagyugyaerik/charts/releases/download/nginx-5-0.1.0/nginx-5-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-08T02:02:09.158299926Z"
+  nginx-8:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-12T06:58:13.371826904Z"
+    description: A Helm chart for Kubernetes
+    digest: 09b81e74a96e018cefc2092d36821f99b1bd429987f361877c1c3f199582608c
+    maintainers:
+    - name: jagyugyaerik
+      url: github.com/jagyugyaerik/charts
+    name: nginx-8
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-8-0.1.0/nginx-8-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-12T06:58:13.371832975Z"
