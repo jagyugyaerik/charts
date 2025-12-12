@@ -1,6 +1,4 @@
-
 name: Release Charts
-
 on:
   push:
     branches:
@@ -9,7 +7,6 @@ on:
        - 'docs/**'
        - 'README.md'
        - '.github/workflows/**'
-
 jobs:
   release:
     # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
