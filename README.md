@@ -14,6 +14,21 @@ Unfortuntely the `cr` won't automatically add repositories for dependencies, and
 
 When using `cr` on a private repository, `helm` is unable to download the chart package files. When you give `helm` your `username` and `password` it uses it to authenticate to the repository (the index file). The index file then tells Helm where to get the tarball. If the tarball is hosted in some other location (Github Releases in this case) then it would require a second authentication (which Helm does not support). The solution is to host the files in the same place as your index file and make the links relative paths so there is no need for the second authentication.
 
+## Usage overview
+
+The end-to-end usage of the charts is supported by three dedicated pipelines: 
+* one for linting the YAML workflow files
+* one for linting and smoke testing the Helm charts
+* one for releasing the charts. 
+
+#### Add or update charts
+
+When you want to add or update a chart, you create a branch, push your changes, and open a pull request; this automatically triggers the `lint-and-smoke-test` pipeline for the Helm charts. If these pipelines succeed and the pull request is merged into the main branch, the `release` pipeline is started, which packages the Helm charts and uploads them to the configured chart repository.
+
+#### Add or modify YAML workflow files
+
+When you want to add or update a workflow file, you create a branch, push your changes, and open a pull request; this automatically triggers the `yamllint` pipeline for the Helm charts. If these pipelines succeed and the pull request is merged into the main branch.
+
 ### Prerequisites
 
 #### Github Token
