@@ -1,12 +1,13 @@
+---
 name: Release Charts
 on:
   push:
     branches:
       - master
     paths-ignore:
-       - 'docs/**'
-       - 'README.md'
-       - '.github/workflows/**'
+      - 'docs/**'
+      - 'README.md'
+      - '.github/workflows/**'
 jobs:
   release:
     # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
@@ -36,4 +37,3 @@ jobs:
           charts_dir: 'charts'
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
