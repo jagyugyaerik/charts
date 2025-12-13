@@ -1,0 +1,46 @@
+name: "ASCII check in charts' values file"
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - './charts/**/values.yaml'
+# Remove all permissions by default
+permissions: {}
+jobs:
+  ascii-check-in-chart-values:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: "ASCII check in charts' values file"
+        env:
+          DIFF_URL: "${{github.event.pull_request.diff_url}}"
+          TMP_FILE: "${{runner.temp}}/pr-${{github.event.number}}.diff"
+          TMP_OUTPUT: "${{runner.temp}}/output"
+        run: |
+          curl -Lkso $TMP_FILE $DIFF_URL
+          files_changed="$(sed -nr 's/[\-\+]{3} [ab]\/(.*)/\1/p' $TMP_FILE | sort | uniq)"
+          values_files="$(echo "$files_changed" | grep -o ".*values\.yaml$" | sort | uniq || true)"
+          # Create an empty file, useful when a PR only modifies ignored files.
+          touch "${TMP_OUTPUT}"
+          grep -nHP "[\x80-\xFF]" "${values_files[@]}" | sort -u > ${TMP_OUTPUT} || true
+          while read -r line; do
+            # line format:
+            #   file:row:message
+            # Split by ':'
+            readarray -d : -t strarr < <(printf '%s' "$line")
+            if [[ "${#strarr[@]}" -ge 3 ]]; then
+              echo "::warning file=${strarr[0]},line=${strarr[1]}:: Non ASCII character in '${strarr[@]:2}'"
+            else
+              echo "::warning:: Error processing: ${line}"
+            fi
+          done < "${TMP_OUTPUT}"
+          if [[ -s ${TMP_OUTPUT} ]]; then
+            echo "::error:: Please review warning messages"
+            exit 1
+          fi
