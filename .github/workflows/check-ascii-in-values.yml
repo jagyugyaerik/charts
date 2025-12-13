@@ -2,7 +2,7 @@ name: "ASCII check in charts' values file"
 on:
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - './charts/**/values.yaml'
 # Remove all permissions by default
