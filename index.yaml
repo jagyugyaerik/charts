@@ -116,4 +116,15 @@ entries:
     urls:
     - https://github.com/jagyugyaerik/charts/releases/download/nginx-19-0.1.0/nginx-19-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-13T23:22:26.721467859Z"
+  nginx-20:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-13T23:25:44.724939099Z"
+    description: A Helm chart for Kubernetes
+    digest: effb6d4930b54b18d4b2dead7a2aaea39cd003f5f413fe379f11c0f494d38acb
+    name: nginx-20
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-20-0.1.0/nginx-20-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-13T23:25:44.724946223Z"
