@@ -1,0 +1,22 @@
+name: '[Support] Assign asset label'
+on:
+  pull_request_target:
+    types:
+      - opened
+# Remove all permissions by default
+permissions: {}
+jobs:
+  assign-label:
+    name: Assign label
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - id: get-asset
+        name: Get modified assets
+        env:
+          DIFF_URL: "${{github.event.pull_request.diff_url}}"
+          TEMP_FILE: "${{runner.temp}}/pr-${{github.event.number}}.diff"
+        run: |
+          # This request doesn't consume API calls.
+          curl -Lkso $TEMP_FILE $DIFF_URL
