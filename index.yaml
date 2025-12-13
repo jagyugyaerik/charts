@@ -94,4 +94,15 @@ entries:
     urls:
     - https://github.com/jagyugyaerik/charts/releases/download/nginx-12-0.1.0/nginx-12-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-12T08:17:35.743934583Z"
+  nginx-18:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-13T23:10:27.878807499Z"
+    description: A Helm chart for Kubernetes
+    digest: 35f3fb10563b52732885236b4807c3996291280b854c22646595e050d1faae99
+    name: nginx-18
+    type: application
+    urls:
+    - https://github.com/jagyugyaerik/charts/releases/download/nginx-18-0.1.0/nginx-18-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-13T23:10:27.878817327Z"
